@@ -655,13 +655,13 @@
     </div>
   </div>
 
-<p>Click the "Tryit" button to hide the first H1 element in the iframe (another document).</p>
+<p id="parag">Click the "Tryit" button to hide the first H1 element in the iframe (another document).</p>
 
 <button onclick="myFunction()">Try it</button>
 
 <script>
 function myFunction() {
-  var iframe = document.getElementById("page-top");
+  var testVar = $("#parag").html();
 	alert(iframe);
 }
 </script>
