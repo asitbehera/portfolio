@@ -655,16 +655,7 @@
     </div>
   </div>
 
-<p id="parag">Click the "Tryit" button to hide the first H1 element in the iframe (another document).</p>
 
-<button onclick="myFunction()">Try it</button>
-
-<script>
-function myFunction() {
-  var testVar = $("#parag").html();
-	alert(iframe);
-}
-</script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -682,7 +673,16 @@ function myFunction() {
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+<p id="parag">Click the "Tryit" button to hide the first H1 element in the iframe (another document).</p>
 
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var testVar = $("#parag").html();
+	alert(iframe);
+}
+</script>
 </body>
 
 </html>
