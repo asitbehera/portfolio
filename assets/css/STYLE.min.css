@@ -628,9 +628,9 @@ p.unsub a:focus, p.unsub a:hover {
     margin: 50px 0;
 }
 
-/*.fenty-logo img {
-    width: 20%;
-}*/
+.fenty-logo img {
+    width: 300px;
+}
 
 .footer-button {
     display: flex;
@@ -639,4 +639,10 @@ p.unsub a:focus, p.unsub a:hover {
 
 .text-center {
     text-align: center;
+}
+@media screen and (min-width: 800 px) {
+.fenty-logo img {
+    width: 100%;
+}
+
 }
