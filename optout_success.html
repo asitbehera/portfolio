@@ -1,0 +1,81 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>Preference Center</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf" />xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="assets/scripts/LtkResize.min.js"></script>
+        <link href="//www.fentybeauty.com/on/demandware.static/Sites-FENTY-Site/-/default/dwc680c7be/images/favicon.ico" rel="shortcut icon" />
+        <link href="assets/css/STYLE.min.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!-- Remove this section during integration -->
+        <!-- Remove this section during integration -->
+        <div id="wrapper">
+            <div class="fenty-logo">
+                <img alt="Fenty-logo" src="assets/img/fenty-beauty-tab-logo-large.gif" />
+            </div>
+            <div id="pref-center-wrapper" class="ltk-clearfix">
+                <div class="ltk-pref-content ltk-clearfix">
+                    <div class="row ltk-clearfix text-center">
+                        <h2>SAY IT AIN'T SO!</h2>
+                        <p>Once a family, always a family. Re-subscribe at&nbsp;any&nbsp;time!</p>
+                    </div>
+                    <div class="row ltk-clearfix">
+                        <div class="footer-button">
+                            <a class="back-button" href="email_preferences.html" title="BACK TO MY PREFERENCES" target="_parent">BACK TO MY PREFERENCES</a>
+                        </div>
+                        <!-- If linking to outside page, add target="_parent" -->
+                    </div>
+                </div>
+            </div>
+            <!-- End #pref-center-wrapper -->
+        </div>
+
+        <script src="assets/scripts/functionality.min.js"></script>
+        <script src="assets/scripts/SCRIPTS.min.js"></script>
+        <script>
+            (function () {
+                function dispatch(name, data) {
+                    if (document.dispatchEvent) {
+                        var customEvent = new CustomEvent("ltk_" + name, obj);
+                        customEvent.EventArgs = data;
+                        document.dispatchEvent(customEvent);
+                    }
+                }
+                //handle validation    
+                var elements = document.querySelectorAll("input,select");
+                var forms = document.querySelectorAll("form");
+                var invalidClassName = " ltkinputnotvalid";
+                var AddClassToElement = function (elem, cls) { elem.className += cls; }
+                var RemoveClassFromElement = function (elem, cls) { elem.className = elem.className.replace(cls, ""); }
+                var ElementHasClass = function (elem, cls) { return elem.className.indexOf(cls) > -1; }
+                for (var i = 0; i < elements.length; i++) {
+                    var element = elements[i];
+                    element.addEventListener("invalid", function (e) {
+                        if (!e.target.validity.valid) {
+                            AddClassToElement(e.target, invalidClassName);
+                            if (ElementHasClass(e.target.parentNode, "dropdown"))
+                                AddClassToElement(e.target.parentNode, invalidClassName);
+                        }
+                    });
+                    element.addEventListener("change", function (e) {
+                        RemoveClassFromElement(e.target, invalidClassName);
+                        if (ElementHasClass(e.target.parentNode, "dropdown"))
+                            RemoveClassFromElement(e.target.parentNode, invalidClassName);
+                    });
+                }
+                for (var j = 0; j < forms.length; j++) {
+                    var form = forms[j];
+                    form.noValidate = true;
+                    form.addEventListener("submit", function (event) {
+                        if (!event.target.checkValidity()) {
+                            event.preventDefault();
+                        }
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>
