@@ -640,8 +640,26 @@ p.unsub a:focus, p.unsub a:hover {
 .text-center {
     text-align: center;
 }
+
 @media screen and (max-width: 530px) {
 .fenty-logo img {
     width: 100%;
 }
+}
+
+/*@supports (-webkit-overflow-scrolling: touch) {
+  .fenty-logo img {
+   height: 211px;
+}
+}*/
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) {
+      .fenty-logo img {
+   height: 211px;
+}
+    
 }
