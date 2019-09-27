@@ -640,9 +640,8 @@ p.unsub a:focus, p.unsub a:hover {
 .text-center {
     text-align: center;
 }
-@media screen and (min-width: 800 px) {
+@media screen and (max-width: 530px) {
 .fenty-logo img {
     width: 100%;
 }
-
 }
